@@ -1,8 +1,36 @@
-<% if (!user) { %>
-	<h2>Welcome! Please log in.</h2>
-	<a href="/login">Log in</a>
-	<a href="/signup">New Member</a>
-<% } else { %>
-	<h2>Hello, <%= user.username %>.</h2>
-	<a align=right href="/logout">Log out</a>
-<% } %>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HAHA</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<script>
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', '/validate');
+    xhr.setRequestHeader('accept', 'application/json');
+    xhr.setRequestHeader('content-type', 'application/json');
+    xhr.addEventListener('readystatechange', function() {
+        if(xhr.readyState === 4 && xhr.status === 200) {
+            var obj = JSON.parse(xhr.responseText);
+            console.log(obj);
+            document.querySelector('.message').innerHTML = 'welcome: ' + obj.user.username + '!';
+            if(obj){
+                document.querySelector('.register').style.display = 'none';
+                document.querySelector('.logout').style.display = 'block';
+            }
+        }
+    });
+
+    xhr.send();
+</script>
+<body>
+<div class="container">
+    <a href="/">Go home</a>
+    <a href="/login">Login</a>
+    <a href="/register" class="register">Register</a>
+    <a href="/logout" class="logout" >logout</a>
+</div>
+
+<div class="message"></div>
+</body>
+</html>
