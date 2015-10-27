@@ -3,6 +3,7 @@
 <head>
     <title>HAHA</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
 </head>
 <script>
     document.addEventListener('DOMContentLoaded',function() {
@@ -34,19 +35,24 @@
     })
 </script>
 <body>
-
+<div class="col-lg-4"></div>
+<div class="col-lg-4">
+    <h2 class="text-center">LOGIN</h2>
     <div>
         <label>Username:</label>
-        <input  class="username" type="text" name="username"/>
+        <input  class="form-control username" type="text" name="username"/>
     </div>
     <div>
         <label>Password:</label>
-        <input  class="password" type="password" name="password"/>
+        <input  class="form-control password" type="password" name="password"/>
     </div>
-   <button>login in</button>
-   <div class="message"></div>
+   <button class="form-control btn btn-primary col-lg-3">login in</button>
+<br><br>
+   <div class="message text-center text-success"></div>
 
-
-    <a href="/">go back HOME</a>
+<br>
+    <a href="/" ><button class="btn btn-sm btn-danger">go back HOME</button></a>
+    </div>
+<div class="col-lg-4"></div>
 </body>
 </html>

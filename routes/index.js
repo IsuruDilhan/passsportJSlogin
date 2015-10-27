@@ -49,7 +49,7 @@ router.get('/login', function(req, res) {
     console.log(req.user);
     if(req.user) {
 
-        res.send('you are already login in!');
+        res.send('You are already logged in! :D');
     } else {
         res.render('login', {});
     }
@@ -58,7 +58,7 @@ router.get('/login', function(req, res) {
 router.post('/login', passport.authenticate('local'), function(req, res) {
 
     if (req.user) {
-        res.status(200).json('User ' + req.user.username + ' has login in!');
+        res.status(200).json('User ' + req.user.username + ' has logged in!');
 
     } else {
         // json that user is not authenticated
