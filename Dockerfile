@@ -19,8 +19,10 @@ COPY . /src
 RUN cd /src; npm install
 
 # Start mongo service
-# RUN service mongod start
+
 
 EXPOSE 8080
 
+CMD service mongod status
+CMD service mongod start
 CMD cd /src && npm start
