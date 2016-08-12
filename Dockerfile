@@ -24,5 +24,4 @@ RUN cd /src; npm install
 EXPOSE 8080
 
 CMD service mongod status
-CMD service mongod start
-CMD cd /src && npm start
+CMD service mongod start && cd /src && npm start
