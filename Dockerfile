@@ -9,7 +9,7 @@ RUN rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.
 RUN yum install -y npm
 
 # Install Mongo...
-RUN yum -y install mongodb-server; yum clean all
+RUN yum -y install mongodb-server
 RUN mkdir -p /data/db
 
 # Copy app to /src
