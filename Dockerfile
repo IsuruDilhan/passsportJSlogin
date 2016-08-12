@@ -19,7 +19,7 @@ COPY . /src
 RUN cd /src; npm install
 
 # Start mongo service
-RUN service mongod start
+# RUN service mongod start
 
 EXPOSE 8080
 
