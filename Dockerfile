@@ -18,6 +18,9 @@ COPY . /src
 # Install app and dependencies into /src
 RUN cd /src; npm install
 
+# Start mongo service
+RUN service mongod start
+
 EXPOSE 8080
 
 CMD cd /src && npm start
