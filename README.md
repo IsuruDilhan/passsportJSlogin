@@ -1,7 +1,4 @@
-[![CircleCI]
-(https://circleci.com/gh/IsuruDilhan/passsportJSlogin.svg?style=svg)]
-(https://circleci.com/gh/IsuruDilhan/passsportJSlogin)
+[![CircleCI](https://circleci.com/gh/IsuruDilhan/passsportJSlogin.svg?style=svg)](https://circleci.com/gh/IsuruDilhan/passsportJSlogin) [![Build Status](https://travis-ci.org/IsuruDilhan/passsportJSlogin.svg?branch=master)](https://travis-ci.org/IsuruDilhan/passsportJSlogin)
 
-# passsportJSlogin
+# PasssportJS Login
 Login using passportJs
-![alt tag](https://drive.google.com/file/d/0By2XwHJSN1WoREVMN2pyemdrZ0E/view?usp=sharing)
