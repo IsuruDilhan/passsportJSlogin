@@ -56,7 +56,10 @@ router.get('/login', function(req, res) {
 });
 
 router.post('/login', passport.authenticate('local'), function(req, res) {
-
+    console.log(req.session);
+    var session = req.session;
+    // pass this as a json to client
+    // then save it on localstorage
     if (req.user) {
         res.status(200).json('User ' + req.user.username + ' has logged in!');
 
