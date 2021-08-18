@@ -1,16 +1,12 @@
-FROM centos:centos6
+FROM centos:centos8
 
 MAINTAINER isuru.dilhan@yahoo.com
 
-# Enable EPEL for Node.js
-RUN rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
-
 # Install Node...
-RUN yum install -y npm
+RUN yum -y update; yum clean all
+RUN yum -y install epel-release; yum clean all
+RUN yum -y install nodejs npm; yum clean all
 
-# Install Mongo...
-RUN yum -y install mongodb-server
-RUN mkdir -p /data/db
 
 # Copy app to /src
 COPY . /src
@@ -18,10 +14,7 @@ COPY . /src
 # Install app and dependencies into /src
 RUN cd /src; npm install
 
-# Start mongo service
-
 
 EXPOSE 8080
 
-CMD service mongod status
-CMD service mongod start && cd /src && npm start
+CMD cd /src && node ./app.js
